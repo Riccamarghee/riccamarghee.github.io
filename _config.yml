@@ -1,8 +1,37 @@
-title: Il mio sito
-description: Sito personale con Jekyll
+title: Riccardo Margheritti
+description: PhD Student — Research, publications, teaching
 theme: minima
 markdown: kramdown
+timezone: Europe/Rome
 
 repository: riccamarghee/riccamarghee.github.io
 url: https://riccamarghee.github.io
 baseurl: ""
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+header_pages:
+  - about.md
+  - research.md
+  - publications.md
+  - teaching.md
+  - talks.md
+  - projects.md
+  - cv.md
+  - contact.md
+
+show_excerpts: true
+
+author:
+  name: Riccardo Margheritti
+  email: you@example.com
+
+minima:
+  social_links:
+    - { platform: github,  user_url: "https://github.com/riccamarghee" }
+    - { platform: linkedin, user_url: "https://www.linkedin.com" }
+
+sass:
+  style: compressed
