@@ -2,3 +2,7 @@ title: Il mio sito
 description: Sito personale con Jekyll
 theme: minima
 markdown: kramdown
+
+repository: riccamarghee/riccamarghee.github.io
+url: https://riccamarghee.github.io
+baseurl: ""
