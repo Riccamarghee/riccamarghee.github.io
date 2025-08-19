@@ -1,1 +1,18 @@
+# Example entries. Add your real ones below.
+- title: Learning Flow Fields from Sparse Sensors with Physics-Informed Networks
+  authors: R. Margheritti, G. Boracchi, M. Quadrio
+  venue: Conference on Computer Vision and Pattern Recognition (CVPR)
+  year: 2025
+  doi: https://doi.org/10.0000/xyz123
+  abstract: We reconstruct fluid dynamics fields from minimal sensors using PINNs.
+  links:
+    pdf: https://example.com/paper.pdf
+    code: https://github.com/riccamarghee/project
+
+- title: Virtual Sensor Placement for CFD with Uncertainty-Aware Optimization
+  authors: R. Margheritti, M. Quadrio
+  venue: International Conference on Machine Learning (ICML) Workshop
+  year: 2024
+  links:
+    pdf: https://example.com/workshop.pdf
 
