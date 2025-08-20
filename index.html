@@ -1,116 +1,222 @@
----
-layout: null
----
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Riccardo Margheritti — PhD Student</title>
-  <link rel="stylesheet" href="/assets/style.css">
-  <meta name="description" content="PhD student page — research, publications, projects, teaching.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Riccardo Margheritti</title>
+
+  <!-- Bootstrap + Font Awesome (CDN) -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+
+  <style>
+    @media (max-width: 768px) {
+      .center-text { text-align: center; }
+      .profile-pic-alignment{ text-align: center; }
+      .profile-pic-alignment img{ text-align: center; }
+      .paper_pic img{ max-width: 25%; }
+    }
+    @media (min-width: 768px) {
+      .profile-pic-alignment{ text-align: right; }
+      .profile-pic-alignment img{ text-align: right; }
+    }
+    .name { text-align: center; font-size: 2rem; }
+    .profile_info { font-size: 1.1rem; }
+    .horizontal-space { margin-right: 20px; }
+    .interactive-icon:hover { color: #007bff; }
+    h3 { font-size: 1.5rem; }
+    h3 a { color: #000000; text-decoration: none; }
+    h3 a:hover { text-decoration: underline; }
+    a.email-link { color: inherit; }
+    .shadow { box-shadow: 8px 8px 10px rgba(0,0,0,0.5); }
+    .dark-background { background-color: #373737; color: #ffffff; }
+    footer {
+      background-color: #373737; color: white; text-align: center;
+      padding: 10px 0; position: relative; bottom: 0; width: 100%;
+    }
+    footer p { margin: 0; font-size: 1.0rem; }
+  </style>
 </head>
 <body>
-  <main class="container">
-    <header class="header">
-      <img src="/assets/profile.jpg" alt="Foto profilo" class="avatar">
-      <div class="identity">
-        <h1>Riccardo Margheritti</h1>
-        <p class="role">PhD Student in Artificial Intelligence</p>
-        <p class="email">riccardo.margheritti (at) polimi.it</p>
-        <nav class="social">
-          <a href="#" aria-label="Google Scholar">Scholar</a>
-          <a href="https://www.linkedin.com" aria-label="LinkedIn">LinkedIn</a>
-          <a href="https://github.com/riccamarghee" aria-label="GitHub">GitHub</a>
-        </nav>
-      </div>
-    </header>
 
-    <section id="bio">
+<header class="dark-background text-center pt-1">
+  <h1 class="name mt-1 mb-3">Riccardo Margheritti</h1>
+
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-6 col-sm-12 profile-pic-alignment">
+      <!-- Sostituisci con la tua foto: assets/profile-picture.jpg oppure un altro path -->
+      <img src="profile-picture.jpg" alt="Foto profilo" class="img-fluid rounded-circle mb-4" style="max-width: 200px;">
+    </div>
+
+    <div class="col-md-6 col-sm-12">
+      <div class="text-left">
+        <p class="center-text profile_info">
+          <i class="fas fa-briefcase mr-2"></i> PhD Student · Artificial Intelligence · Politecnico di Milano
+        </p>
+        <p class="center-text profile_info">
+          <i class="fas fa-envelope mr-2"></i>
+          <!-- Modifica l'email qui -->
+          <a href="mailto:riccardo.margheritti@polimi.it" class="email-link" target="_blank">
+            riccardo.margheritti (at) polimi.it
+          </a>
+        </p>
+        <p class="center-text">
+          <!-- Scholar: inserisci il tuo user -->
+          <a href="https://scholar.google.com/citations?user=TODO" target="_blank" class="email-link">
+            <i class="fas fa-graduation-cap fa-2x mr-2 interactive-icon"></i>
+          </a>
+          <span class="horizontal-space"></span>
+          <!-- LinkedIn: aggiorna lo slug -->
+          <a href="https://www.linkedin.com/in/TODO/" target="_blank" class="email-link">
+            <i class="fab fa-linkedin fa-2x mr-2 interactive-icon"></i>
+          </a>
+          <span class="horizontal-space"></span>
+          <!-- GitHub corretto -->
+          <a href="https://github.com/riccamarghee" target="_blank" class="email-link">
+            <i class="fab fa-github fa-2x mr-2 interactive-icon"></i>
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container my-5">
+  <div class="col-md-12">
+    <!-- Bio -->
+    <div class="bio mb-5">
       <h2>Bio</h2>
-      <p>
-        PhD in Artificial Intelligence at Politecnico di Milano. My research focuses on
-        Physics-Informed Neural Networks (PINNs), virtual sensor placement, and learning from
-        CFD simulations for flow field reconstruction and classification.
+      <p class="text-justify">
+        PhD in Artificial Intelligence al Politecnico di Milano. Mi occupo di
+        Physics-Informed Neural Networks (PINNs), posizionamento virtuale di sensori e
+        apprendimento da simulazioni CFD per la ricostruzione e classificazione dei campi di moto.
       </p>
-    </section>
+    </div>
 
-    <section id="projects">
-      <h2>Projects</h2>
+    <!-- Projects -->
+    <h2>Projects</h2>
+    <div class="projects mb-5">
 
-      <h3>2025</h3>
-      <article class="item">
-        <div class="item-head">
-          <h4>AirNACA: Learning on CFD Airfoil Datasets</h4>
-          <div class="tags">Python, PyTorch, PointNet</div>
+      <h3 class="mt-5 mb-3">2025</h3>
+
+      <div class="row mb-5">
+        <div class="col-md-2 paper_pic">
+          <a href="https://github.com/riccamarghee/AirNACA" target="_blank">
+            <!-- Metti una tua immagine progetto -->
+            <img src="airnaca.jpg" alt="AirNACA" class="img-fluid shadow mb-4">
+          </a>
         </div>
-        <p>Pipeline and datasets for learning from CFD simulations on airfoils with defects and morphing.</p>
-        <p class="links">
-          <a href="https://github.com/riccamarghee/AirNACA">Code</a>
-        </p>
-      </article>
-
-      <h3>2024</h3>
-      <article class="item">
-        <div class="item-head">
-          <h4>Volumetric Mesh Morphing via Compact RBF</h4>
-          <div class="tags">Python, NumPy, SciPy</div>
+        <div class="col-md-9">
+          <h3>
+            <a href="https://github.com/riccamarghee/AirNACA" target="_blank">
+              AirNACA: Learning on CFD Airfoil Datasets
+            </a>
+          </h3>
+          <h6><i>Python, PyTorch, PointNet/PointNet++</i></h6>
+          <p>
+            Pipeline e dataset per apprendere da simulazioni CFD su profili alari con difetti
+            e morphing di mesh; features da RANS, clustering GMM bayesiano e modelli deep.
+          </p>
+          <a href="https://github.com/riccamarghee/AirNACA" target="_blank" class="btn btn-primary">
+            <i class="fab fa-github fa-1x mr-2 interactive-icon"></i>Code
+          </a>
         </div>
-        <p>Implementation of compact C2 RBF morphing for 3D meshes with batching and sparse ops.</p>
-        <p class="links">
-          <a href="#">Code</a>
-        </p>
-      </article>
-    </section>
+      </div>
 
-    <section id="publications">
-      <h2>Publications</h2>
+      <h3 class="mt-5 mb-3">2024</h3>
 
-      <h3>2025</h3>
-      <article class="pub">
-        <h4>Learning Flow Fields from Sparse Sensors with PINNs</h4>
-        <div class="venue">Conference on Computer Vision and Pattern Recognition (CVPR)</div>
-        <div class="authors">R. Margheritti, G. Boracchi, M. Quadrio</div>
-        <p class="pub-links">
-          <a href="#">PDF</a> · <a href="#">DOI</a> · <a href="https://github.com/riccamarghee">Code</a>
-        </p>
-        <p class="abstract">We reconstruct fluid dynamics fields from minimal sensors by enforcing physics priors in the loss.</p>
-      </article>
+      <div class="row mb-5">
+        <div class="col-md-2 paper_pic">
+          <a href="https://github.com/riccamarghee" target="_blank">
+            <img src="rbf-morph.gif" alt="RBF Morphing" class="img-fluid shadow mb-4">
+          </a>
+        </div>
+        <div class="col-md-9">
+          <h3>
+            <a href="https://github.com/riccamarghee" target="_blank">
+              Volumetric Mesh Morphing via Compact C2 RBF
+            </a>
+          </h3>
+          <h6><i>Python, NumPy/SciPy, Sparse Ops</i></h6>
+          <p>
+            Implementazione RBF compatta C2 con supporto variabile per deformare mesh 3D,
+            batching e versioni sparse; applicata a geometrie complesse (es. cavità nasali).
+          </p>
+          <a href="https://github.com/riccamarghee" target="_blank" class="btn btn-primary">
+            <i class="fab fa-github fa-1x mr-2 interactive-icon"></i>Code
+          </a>
+        </div>
+      </div>
+    </div>
 
-      <h3>2024</h3>
-      <article class="pub">
-        <h4>Virtual Sensor Placement for CFD with Uncertainty-Aware Optimization</h4>
-        <div class="venue">ICML Workshop</div>
-        <div class="authors">R. Margheritti, M. Quadrio</div>
-        <p class="pub-links"><a href="#">PDF</a></p>
-      </article>
-    </section>
+    <!-- Publications -->
+    <h2>Publications</h2>
+    <div class="publication mb-5">
 
-    <section id="awards">
-      <h2>Awards</h2>
+      <h3 class="mt-5 mb-3">2025</h3>
+      <div class="row mb-5">
+        <div class="col-md-2 paper_pic">
+          <a href="#" target="_blank">
+            <img src="paper-2025.png" alt="Publication Image" class="img-fluid shadow mb-4">
+          </a>
+        </div>
+        <div class="col-md-9">
+          <h3><a href="#" target="_blank">Flow Reconstruction from Sparse Sensors with Physics Constraints</a></h3>
+          <h6><i>TODO venue</i></h6>
+          <p>Ricostruzione di campi fluidodinamici da sensori scarsi integrando vincoli fisici nella loss.</p>
+          <a href="#" target="_blank" class="btn btn-primary">Paper</a>
+          <a href="#" target="_blank" class="btn btn-secondary">Poster</a>
+        </div>
+      </div>
+
+      <h3 class="mt-5 mb-3">2024</h3>
+      <div class="row mb-5">
+        <div class="col-md-2 paper_pic">
+          <a href="#" target="_blank">
+            <img src="paper-2024.png" alt="Publication Image" class="img-fluid shadow mb-4">
+          </a>
+        </div>
+        <div class="col-md-9">
+          <h3><a href="#" target="_blank">Virtual Sensor Placement for CFD</a></h3>
+          <h6><i>TODO venue</i></h6>
+          <p>Ottimizzazione del posizionamento di sensori virtuali con incertezza e vincoli fisici.</p>
+          <a href="#" target="_blank" class="btn btn-primary">Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Awards -->
+    <h2>Awards</h2>
+    <div class="publication mb-5">
       <ul>
-        <li>2025: Best Paper Finalist, Example Conference</li>
-        <li>2024: Teaching Assistant Recognition, Politecnico di Milano</li>
+        <li><strong>2025</strong>: TODO award</li>
       </ul>
-    </section>
+    </div>
 
-    <section id="education">
-      <h2>Education</h2>
-      <div class="edu">
-        <h4>PhD in Artificial Intelligence</h4>
-        <div class="place">Politecnico di Milano</div>
-        <div class="year">2025</div>
+    <!-- Education -->
+    <h2>Education</h2>
+    <div class="publication mb-5">
+      <div class="degree mb-4">
+        <h3 class="degree-title">PhD in Artificial Intelligence</h3>
+        <h6 class="institution"><i>Politecnico di Milano</i></h6>
+        <p class="year">in corso</p>
       </div>
-      <div class="edu">
-        <h4>MSc in Computer Science and Engineering</h4>
-        <div class="place">Politecnico di Milano</div>
-        <div class="year">2021</div>
+      <div class="degree mb-4">
+        <h3 class="degree-title">MSc in Aerospace and Aeronautical Engineering</h3>
+        <h6 class="institution"><i>Politecnico di Milano</i></h6>
+        <p class="year">—</p>
       </div>
-    </section>
+    </div>
+  </div>
+</div>
 
-    <footer class="footer">
-      <p>© 2025 Riccardo Margheritti</p>
-    </footer>
-  </main>
+<footer>
+  <p>&copy; 2025 Riccardo Margheritti. All Rights Reserved.</p>
+</footer>
+
+<!-- JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
