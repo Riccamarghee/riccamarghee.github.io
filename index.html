@@ -42,6 +42,67 @@
       padding: 10px 0; position: relative; bottom: 0; width: 100%;
     }
     footer p { margin: 0; font-size: 1.0rem; }
+
+    /* === Custom project & carousel styling === */
+  .carousel {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 10%; /* narrower click area */
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 16px;
+    height: 16px;
+    background-size: 100% 100%;
+    opacity: 0.7;
+    background-color: rgba(0,0,0,0.35);
+    border-radius: 50%;
+    filter: drop-shadow(0 0 2px rgba(0,0,0,0.4));
+  }
+
+  .carousel-control-prev-icon:hover,
+  .carousel-control-next-icon:hover {
+    opacity: 1;
+    background-color: rgba(0,0,0,0.55);
+  }
+
+  .project-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  }
+  .project-img:hover { transform: scale(1.03); }
+
+  .project-item h3 a {
+    color: #000 !important;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .project-item h3 a:hover { text-decoration: underline; }
+
+  .project-subtitle {
+    color: #333 !important;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+  .project-item p {
+    color: #000 !important;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .project-item .btn {
+    margin-top: 5px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    padding: 6px 14px;
+  }
   </style>
 </head>
 <body>
