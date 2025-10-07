@@ -9,3 +9,32 @@ h1, h2, h3 { letter-spacing: 0.02em; }
   flex: 0 0 20.8333%;  /* 2.5/12 */
   max-width: 20.8333%;
 }
+
+
+/* Carousel styling */
+.carousel {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Smaller and subtle arrow icons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 1rem;        /* smaller width */
+  height: 1rem;       /* smaller height */
+  background-color: rgba(0, 0, 0, 0.35);  /* soft transparent black */
+  border-radius: 50%;
+  background-size: 60%; /* makes the arrow inside smaller */
+}
+
+/* On hover: slightly brighten */
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+/* Hide text labels ("Previous", "Next") visually but keep accessible */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 10%;  /* narrow clickable area */
+}
