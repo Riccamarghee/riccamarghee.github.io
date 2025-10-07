@@ -256,13 +256,33 @@
     <!-- Relevant Projects -->
 <h2>Projects</h2>
 
-  <!-- Rear Wing Project -->
+ <!-- Rear Wing Project with Image Carousel -->
 <div class="row align-items-center mb-5 project-item">
-  <div class="col-md-3 paper_pic">
-    <a href="https://drive.google.com/file/d/1S3Xd57ogEkPDYDWUM7hBDxXZLQheME0s/view?usp=drive_link" target="_blank">
-      <img src="assets/car.png" alt="Sports Car Rear Wing" class="img-fluid project-img shadow mb-4">
-    </a>
+  <div class="col-md-4 paper_pic">
+    <div id="carouselRearWing" class="carousel slide shadow mb-4" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="assets/car1.png" class="d-block w-100 project-img" alt="Rear Wing CAD">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/car2.png" class="d-block w-100 project-img" alt="Wind Tunnel Test">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/car3.png" class="d-block w-100 project-img" alt="CFD Simulation">
+        </div>
+      </div>
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselRearWing" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselRearWing" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
   </div>
+
   <div class="col-md-8 project-text">
     <h3>
       <a href="https://drive.google.com/file/d/1S3Xd57ogEkPDYDWUM7hBDxXZLQheME0s/view?usp=drive_link" target="_blank">
@@ -277,7 +297,7 @@
       Includes wind tunnel testing, 3D simulations, and fluid-structure interaction analysis.
     </p>
     <a href="https://drive.google.com/file/d/1S3Xd57ogEkPDYDWUM7hBDxXZLQheME0s/view?usp=drive_link" target="_blank" class="btn btn-primary">
-      <i class="fas fa-file-alt mr-2"></i>Report
+      <i class="fas fa-file-alt mr-1"></i>Report
     </a>
   </div>
 </div>
