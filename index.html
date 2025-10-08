@@ -13,113 +13,101 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
 
   <style>
-    @media (max-width: 768px) {
-      .center-text { text-align: center; }
-      .profile-pic-alignment{ text-align: center; }
-      .profile-pic-alignment img{ text-align: center; }
-      .paper_pic img{ max-width: 25%; }
-    }
-    @media (min-width: 768px) {
-      .profile-pic-alignment{ text-align: right; }
-      .profile-pic-alignment img{ text-align: right; }
-    }
-    .name { text-align: center; font-size: 2rem; }
-    .profile_info { font-size: 1.1rem; }
-    .horizontal-space { margin-right: 20px; }
-    .interactive-icon:hover { color: #007bff; }
-    .col-md-2-5 {
-      flex: 0 0 20.8333%;   /* 2.5/12 */
-      max-width: 20.8333%;
-    }
-    h3 { font-size: 1.5rem; }
-    h3 a { color: #000000; text-decoration: none; }
-    h3 a:hover { text-decoration: underline; }
-    a.email-link { color: inherit; }
-    .shadow { box-shadow: 8px 8px 10px rgba(0,0,0,0.5); }
-    .dark-background { background-color: #373737; color: #ffffff; }
-    footer {
-      background-color: #373737; color: white; text-align: center;
-      padding: 10px 0; position: relative; bottom: 0; width: 100%;
-    }
-    footer p { margin: 0; font-size: 1.0rem; }
+  /* Tipografia responsive */
+  .name {
+    text-align: center;
+    font-size: clamp(1.6rem, 6vw, 2.6rem);
+  }
+  .profile_info { font-size: clamp(1rem, 2.8vw, 1.1rem); }
 
-    /* === Custom project & carousel styling === */
+  /* Allineamenti immagine profilo */
+  .profile-pic-alignment { text-align: right; }
+  @media (max-width: 768px) {
+    .profile-pic-alignment { text-align: center; }
+  }
+
+  /* Immagini sempre fluide (in aggiunta a class="img-fluid" in HTML) */
+  img { max-width: 100%; height: auto; }
+
+  /* Evita questo: rimpiccioliva troppo le immagini su mobile */
+  /* .paper_pic img{ max-width: 25%; }  <-- RIMUOVI */
+
+  /* Titoli linkati dei progetti */
+  h3 { font-size: clamp(1.1rem, 3.5vw, 1.5rem); }
+  h3 a { color: #000; text-decoration: none; }
+  h3 a:hover { text-decoration: underline; }
+
+  /* Icone e vari */
+  .interactive-icon:hover { color: #007bff; }
+  .shadow { box-shadow: 8px 8px 10px rgba(0,0,0,0.5); }
+
+  footer {
+    background-color: #373737; color: white; text-align: center;
+    padding: 10px 0; width: 100%;
+  }
+  footer p { margin: 0; font-size: 1rem; }
+
+  /* === Carousel: box con rapporto costante === */
   .carousel {
     border-radius: 10px;
     overflow: hidden;
   }
-
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 10%; /* narrower click area */
+  /* Box del carousel dei progetti con aspect-ratio */
+  .project-item .carousel {
+    width: 100%;
+    aspect-ratio: 16 / 9;   /* desktop/tablet */
+    height: auto;
+    position: relative;
+  }
+  @media (max-width: 768px) {
+    .project-item .carousel {
+      aspect-ratio: 4 / 3;  /* mobile: più alto, migliore resa verticale */
+    }
   }
 
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    width: 16px;
-    height: 16px;
+  /* Immagini dentro il carousel:
+     - desktop: contain (tutto visibile, possibile letterboxing)
+     - mobile: cover (riempie bene, può croppare un po') */
+  .project-item .carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  }
+  @media (max-width: 768px) {
+    .project-item .carousel img { object-fit: cover; }
+  }
+  .project-img:hover { transform: scale(1.03); }
+
+  /* Testi progetto */
+  .project-subtitle { color: #333; font-style: italic; margin-bottom: 10px; }
+  .project-item p { color: #000; font-size: 0.95rem; line-height: 1.6; }
+  .project-item .btn { margin-top: 5px; border-radius: 8px; font-size: 0.9rem; padding: 6px 14px; }
+
+  /* Controlli carousel: più comodi al tocco su mobile */
+  .carousel-control-prev, .carousel-control-next { width: 10%; }
+  @media (max-width: 768px) {
+    .carousel-control-prev, .carousel-control-next { width: 15%; }
+  }
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+    width: 18px; height: 18px;
     background-size: 100% 100%;
-    opacity: 0.7;
+    opacity: 0.85;
     background-color: rgba(0,0,0,0.35);
     border-radius: 50%;
     filter: drop-shadow(0 0 2px rgba(0,0,0,0.4));
   }
-
-  .carousel-control-prev-icon:hover,
-  .carousel-control-next-icon:hover {
-    opacity: 1;
-    background-color: rgba(0,0,0,0.55);
+  .carousel-control-prev-icon:hover, .carousel-control-next-icon:hover {
+    opacity: 1; background-color: rgba(0,0,0,0.55);
   }
 
-  .project-img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-  }
-  .project-img:hover { transform: scale(1.03); }
+  /* Utility per centrare testi su mobile */
+  .center-text { text-align: center; }
+  @media (min-width: 769px) { .center-text { text-align: left; } }
+</style>
 
-  .project-item h3 a {
-    color: #000 !important;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  .project-item h3 a:hover { text-decoration: underline; }
-
-  .project-subtitle {
-    color: #333 !important;
-    font-style: italic;
-    margin-bottom: 10px;
-  }
-  .project-item p {
-    color: #000 !important;
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-  .project-item .btn {
-    margin-top: 5px;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    padding: 6px 14px;
-  }
-      /* --- Fixed size for project carousels --- */
-  .project-item .carousel {
-    width: 100%;
-    height: 180px;               /* 👈 choose height: e.g. 240–300px */
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  /* Images fill the box proportionally */
-  .project-item .carousel img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;           /* crops image to fill without stretching cover */
-    object-position: center;
-  }
-  </style>
 </head>
 <body>
 
